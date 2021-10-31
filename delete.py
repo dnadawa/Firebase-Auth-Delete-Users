@@ -8,6 +8,7 @@ firebase_admin.initialize_app(cred)
 users = []
 
 confirm = input("Are you sure you want to delete all users from firebase auth? (yes/no) : ")
+#process 
 if confirm.lower()=='yes':
     for user in auth.list_users().iterate_all():
         #only delte anonymous users who doesnt have an email
