@@ -8,6 +8,7 @@ db = firestore.client()
 collection =  db.collection('parking')
 docs = collection.get()
 
+#process
 count = 0
 for i in docs:
     doc = i.to_dict()
