@@ -18,6 +18,7 @@ for i in docs:
         db.collection('parking').document(id).update({'extended': False})
     print(id)
 
+#display 
 print()
 print(len(docs) - count, "rows updated")
 print(count,"rows already updated")
