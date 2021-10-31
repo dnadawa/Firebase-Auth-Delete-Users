@@ -7,6 +7,7 @@ firebase_admin.initialize_app(cred)
 
 users = []
 
+#promt for delete all users
 confirm = input("Are you sure you want to delete all users from firebase auth? (yes/no) : ")
 if confirm.lower()=='yes':
     for user in auth.list_users().iterate_all():
