@@ -9,9 +9,9 @@ collection =  db.collection('parking')
 docs = collection.get()
 
 
-
 for i in docs:
     doc = i.to_dict()
     id = i.id
     db.collection('parking').document(id).update({'extended': False})
     print(id)
+print(len(docs), "rows updated!")
