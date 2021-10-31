@@ -8,10 +8,17 @@ db = firestore.client()
 collection =  db.collection('parking')
 docs = collection.get()
 
-
+count = 0
 for i in docs:
     doc = i.to_dict()
     id = i.id
-    db.collection('parking').document(id).update({'extended': False})
+    if "extended" in doc.keys():
+        count+=1
+    else:
+        db.collection('parking').document(id).update({'extended': False})
     print(id)
-print(len(docs), "rows updated!")
+
+print()
+print(len(docs) - count, "rows updated")
+print(count,"rows already updated")
+print("Total: ",len(docs))
